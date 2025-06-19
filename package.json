@@ -1,0 +1,14 @@
+{
+  "name": "devclub-website_v2",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "DevClub",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon -r dotenv/config --experimental-json-modules server/src/server.js",
+    "start": "node server/src/server.js",
+    "build": "yarn install && yarn install --prefix client && yarn build --prefix client"
+  }
+}
