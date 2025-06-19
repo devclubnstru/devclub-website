@@ -1,10 +1,14 @@
+import { ThemeProvider } from './context/Theme/ThemeContext'
 import { RouterProvider } from 'react-router-dom'
 import routes from './routes/Routes'
 import "./styles/global.css"
 
 const App = () => {
   return (
-    <RouterProvider router={routes} />
+    <ThemeProvider>
+      <RouterProvider router={routes} />
+    </ThemeProvider>
+
   )
 }
 
