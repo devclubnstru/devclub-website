@@ -1,6 +1,10 @@
+import HeroSection from "../../sections/HeroSection/HeroSection"
+
 const HomePage = () => {
   return (
-    <div>HomePage</div>
+    <div>
+      <HeroSection />
+    </div>
   )
 }
 

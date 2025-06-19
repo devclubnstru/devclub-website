@@ -8,7 +8,7 @@ export const ThemeProvider = ({ children }) => {
 
     useEffect(() => {
         const savedPreference = localStorage.getItem("theme")
-        const systemPreference = window.matchMedia("prefers-color-scheme").matches ? "dark" : "light"
+        const systemPreference = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"
         setTheme(savedPreference || systemPreference)
         setMounted(true)
     }, [])
@@ -35,6 +35,4 @@ export const ThemeProvider = ({ children }) => {
 
 }
 
-export {
-    ThemeContext
-}
+export { ThemeContext }

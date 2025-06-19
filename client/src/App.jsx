@@ -8,7 +8,6 @@ const App = () => {
     <ThemeProvider>
       <RouterProvider router={routes} />
     </ThemeProvider>
-
   )
 }
 
