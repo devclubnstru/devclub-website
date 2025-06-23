@@ -44,7 +44,7 @@ const EventsSection = () => {
             eventThumbnail: "https://placehold.co/300x200?text=Buildathon",
             eventLabels: ["Design", "No-Code", "Product"].map((t) => ({
                 label: t,
-                className: "bg-purple-100 text-purple-900 dark:bg-purple-800 dark:text-purple-100",
+                className: "bg-purple-300 text-purple-900 dark:bg-purple-800 dark:text-purple-100",
             })),
             eventType: "Syntax Summit"
         },
