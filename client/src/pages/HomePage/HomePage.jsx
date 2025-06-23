@@ -1,10 +1,16 @@
 import HeroSection from "../../sections/HeroSection/HeroSection"
+import ProjectsSection from "../../sections/ProjectsSection/ProjectsSection"
+import EventsSection from "../../sections/EventsSection/EventsSection"
+import TestimonialsSection from "../../sections/TestimonialsSection/TestimonialsSection"
 
 const HomePage = () => {
   return (
-    <div>
-      <HeroSection />
-    </div>
+    <main>
+      <HeroSection/>
+      <ProjectsSection />
+      <EventsSection />
+      <TestimonialsSection />
+    </main>
   )
 }
 

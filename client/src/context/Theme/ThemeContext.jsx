@@ -27,7 +27,7 @@ export const ThemeProvider = ({ children }) => {
 
     return (
         <ThemeContext.Provider value={{ theme, setTheme, toggleTheme }}>
-            <div className={theme}>
+            <div className={`${theme} bg-background-light-base dark:bg-background-dark-base text-text-light dark:text-text-dark transition-background duration-250 font-body`}>
                 {children}
             </div>
         </ThemeContext.Provider>

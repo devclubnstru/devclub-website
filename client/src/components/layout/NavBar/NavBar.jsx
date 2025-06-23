@@ -1,6 +1,11 @@
 import { useTheme } from "../../../hooks/useTheme"
 import { Link } from "react-router-dom"
-import { IconBrandGithubFilled, IconSunFilled, IconMoonFilled } from "@tabler/icons-react"
+import {
+  IconBrandGithubFilled,
+  IconSunFilled,
+  IconMoonFilled,
+} from "@tabler/icons-react"
+import Button from "../../ui/Button/Button"
 
 
 const NavBar = () => {
@@ -12,62 +17,67 @@ const NavBar = () => {
     },
     {
       title: "Events",
-      link: "/"
+      link: "/events"
     },
     {
       title: "Projects",
-      link: "/"
+      link: "/projects"
     },
     {
       title: "Resources",
-      link: "/"
+      link: "/resources"
     },
     {
       title: "Team",
-      link: "/"
+      link: "/team"
     },
     {
-      title: "Who built us?",
-      link: "/"
+      title: "About Us",
+      link: "/about"
     },
   ]
 
   const { theme, toggleTheme } = useTheme()
 
   return (
-    <nav className="sticky top-0 border-gray-100/50 shadow-lg bg-white/80 backdrop-blur-sm z-50 border-b p-4">
-      <div className="w-full mx-auto lg:container lg:mx-auto px-4 md:px-12 h-full flex justify-between">
-        <div className="flex justify-between items-center w-full">
-          <div className="flex items-center flex-col ">
-            {/* <img src="/images/devclub_logo.svg" alt="" /> */}
-            <h2 className="text-primary-red text-lg"><span className="text-primary-blue">nst x</span> ru</h2>
-            <h1 className="font-bold text-5xl -mt-2">devclub.</h1>
-          </div>
-          <div className="flex items-center">
-            <ul className="flex items-center gap-8">
-              {
-                navigationItems.map((item) => (
-                  <Link to={item.link}>
-                    <li>{item.title}</li>
-                  </Link>
-                ))
-              }
-            </ul>
-          </div>
-          <div className="flex items-center gap-4">
-            <Link to="/">
-              <button className="flex items-center gap-2">
-                <IconBrandGithubFilled />
-                <span>GitHub</span>
-              </button>
-            </Link>
-            <button onClick={toggleTheme}>
-              {theme === "dark" ? <IconSunFilled /> : <IconMoonFilled />}
-            </button>
-          </div>
+    <header className="sm:flex hidden justify-between items-center mx-auto sticky top-0 z-50 backdrop-blur-sm backdrop-saturate-150 dark:bg-background-dark-base/40 bg-background-light-base/40 border-b dark:border-white/5 border-black/5">
+      <div className="container mx-auto flex justify-between items-center py-4 px-2">
+        <div>
+          <Link to="/">
+            <h1 className="font-brand text-5xl font-black text-text-light dark:text-text-dark select-none">
+              devclub.
+            </h1>
+          </Link>
+        </div>
+        <ul className="flex justify-between space-x-8">
+          {
+            navigationItems.map((item, index) => (
+              <Link
+                key={index}
+                to={item.link}
+                className="dark:hover:text-text-dark hover:text-text-light text-text-light/75 dark:text-text-dark/85"
+              >
+                <li>{item.title}</li>
+              </Link>
+            ))
+          }
+        </ul>
+        <div className="flex space-x-2">
+          <a
+            href="https://github.com/devclub-nstru"
+            target="_blank"
+          >
+            {/* <button className="flex dark:bg-background-dark-base border border-black dark:border-white bg-background-light-base dark:hover:bg-background-light-base dark:hover:text-text-light hover:bg-background-dark-base hover:text-text-dark px-4 py-2 rounded-4xl cursor-pointer transition-colors duration-250"></button> */}
+            <Button variant="outline">
+              <IconBrandGithubFilled /><span>Github</span>
+            </Button>
+          </a>
+          <button className="cursor-pointer" onClick={toggleTheme}>
+            {theme === "dark" ? <IconSunFilled className="cursor-pointer" /> : <IconMoonFilled className="cursor-pointer" />}
+          </button>
         </div>
       </div>
-    </nav>
+    </header>
   )
 }
 

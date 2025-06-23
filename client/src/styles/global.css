@@ -2,33 +2,70 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+@layer {
+  @font-face {
+    font-family: "CollSmith";
+    src: url("/fonts/collsmith.otf");
+  }
+
+  @font-face {
+    font-family: "Geist";
+    src: url("/fonts/geist.otf");
+  }
+
+  @font-face {
+    font-family: "Grandspan Tall";
+    src: url("/fonts/grandspan-tall.otf");
+  }
+
+  @font-face {
+    font-family: "ballyane";
+    src: url("/fonts/ballyane.otf");
+  }
+}
+
 @theme {
-  --color-primary-red: #ff0000;
-  --color-primary-blue: #0c59ff;
+  --color-background-dark-base: hsl(0, 0%, 5%);
+  --color-background-dark-1: hsl(0, 0%, 0%);
+  --color-background-dark-2: hsl(0, 0%, 10%);
+  --color-text-dark: hsl(0, 0%, 100%);
+  --color-text-muted-dark: hsl(0, 0%, 70%);
+  --color-background-light-base: hsl(0, 0%, 99%);
+  --color-background-light-1: hsl(0, 0%, 95%);
+  --color-text-light: hsl(0, 0%, 0%);
+  --color-text-muted-light: hsl(0, 0%, 30%);
+  --font-brand: "CollSmith";
+  --font-body: "Geist";
+  --font-hero: "Grandspan Tall";
+  --font-ballyane: "Ballyane";
+}
+@keyframes waveGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 50% 45%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  75% {
+    background-position: 50% 55%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
-.slot-roller {
-  position: relative;
-  height: 1.5rem; /* h-6 */
-  display: block;
-  overflow: hidden;
-}
-.slot-roller span {
-  display: block;
-  width: 100%;
-  text-align: center;
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.slot-roller-hover {
-  pointer-events: none;
-}
-li:hover .slot-roller > span:first-child {
-  transform: translateY(-100%);
-}
-li:hover .slot-roller > .slot-roller-hover {
-  transform: translateY(-100%);
+.animate-wave-gradient {
+  background-size: 300% 300%;
+  animation: waveGradient 5s ease-in-out infinite;
 }
 
-.text-stroke-3 {
-  -webkit-text-stroke: 1px black;
+.scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }
