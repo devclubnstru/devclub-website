@@ -69,3 +69,8 @@
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+
+.liquid-glass {
+  backdrop-filter: url(#liquid-glass);
+  -webkit-backdrop-filter: url(#liquid-glass);
+}

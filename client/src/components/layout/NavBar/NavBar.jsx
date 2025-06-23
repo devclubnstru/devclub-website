@@ -32,7 +32,7 @@ const NavBar = () => {
       link: "/team"
     },
     {
-      title: "About Us",
+      title: "About",
       link: "/about"
     },
   ]
@@ -40,7 +40,10 @@ const NavBar = () => {
   const { theme, toggleTheme } = useTheme()
 
   return (
-    <header className="sm:flex hidden justify-between items-center mx-auto sticky top-0 z-50 backdrop-blur-sm backdrop-saturate-150 dark:bg-background-dark-base/40 bg-background-light-base/40 border-b dark:border-white/5 border-black/5">
+    <header className="sm:flex hidden justify-between items-center sticky top-0 z-50 w-full backdrop-blur-2xl /backdrop-saturate-200 bg-background-light-base/80 dark:bg-background-dark-base/80 border-b border-black/10 dark:border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.1)] liquid-glass bg-gradient-to-b dark:from-background-light-1/5 dark:to-background-light-1/1">
+
+      {/* <header className="fixed top-5 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-5xl rounded-[2rem]  bg-gradient-to-b from-white/70 to-white/30 dark:from-background-light-base/5 dark:to-background-dark-2/5 backdrop-blur-[24px] backdrop-saturate-[300%] border border-white/20 dark:border-white/10 /shadow-[inset_0_1px_2px_rgba(255,255,255,0.3),0_12px_32px_rgba(0,0,0,0.15)] transition-all duration-300 liquid-glass shadow-md"> */}
+
       <div className="container mx-auto flex justify-between items-center py-4 px-2">
         <div>
           <Link to="/">
@@ -55,7 +58,7 @@ const NavBar = () => {
               <Link
                 key={index}
                 to={item.link}
-                className="dark:hover:text-text-dark hover:text-text-light text-text-light/75 dark:text-text-dark/85"
+                className="dark:hover:text-text-dark hover:text-text-light text-text-light/75 dark:text-text-dark/85 transition-all duration-300"
               >
                 <li>{item.title}</li>
               </Link>
