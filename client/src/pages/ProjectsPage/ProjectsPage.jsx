@@ -49,7 +49,7 @@ const ProjectsPage = () => {
                 </p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 overflow-x-auto mt-6 scrollbar-hide">
-                {dummyProjects.slice(0, 4).map((project) => (
+                {dummyProjects.map((project) => (
                     <ProjectCard key={project.id} {...project} />
                 ))}
             </div>
