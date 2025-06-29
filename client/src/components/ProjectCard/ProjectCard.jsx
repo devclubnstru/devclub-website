@@ -61,7 +61,7 @@ const ProjectCard = (props) => {
                     <h3 className="text-xs font-light dark:text-white/40 text-text-muted-light/50">
                         {props.yearOfDevelopment}
                     </h3>
-                    <a href="" className="flex items-center space-x-2">
+                    <a href={props.projectLiveLink} className="flex items-center space-x-2">
                         <h1 className="sm:text-lg text-sm font-semibold dark:text-white">{props.projectName}</h1>
                         <IconArrowUpRight className="w-4 h-4" />
                     </a>
@@ -69,11 +69,11 @@ const ProjectCard = (props) => {
 
                 {/* Image */}
                 <div className="rounded-lg overflow-hidden mb-4 z-10">
-                    <img className="w-full object-cover" src={props.projectImage} alt={props.projectName} />
+                    <img className="w-[350px] h-[200px] object-cover" src={props.projectImage} alt={props.projectName} />
                 </div>
 
                 {/* Tech Stack Pills */}
-                <div className="sm:flex hidden items-center gap-2 flex-wrap mb-4 z-10">
+                <div className="sm:flex hidden items-center gap-1 flex-wrap mb-4 z-10">
                     {props.techStack.map((tech, index) => (
                         <p key={index} className={`text-xs px-2 py-1 rounded-full font-medium ${tech.className}`}>
                             {tech.label}

@@ -8,128 +8,198 @@ const TeamPage = () => {
   const teamMembers = [
     {
       id: 1,
-      name: "Arjun Mehta",
+      name: "Aditya Kumar",
       role: "President",
-      avatar: "https://randomuser.me/api/portraits/men/32.jpg",
-      bio: "Leading DevClub with passion for innovation and community building. Full-stack developer with 3+ years experience.",
-      skills: ["Leadership", "React", "Node.js", "Community Management"],
+      avatar: "/images/team/class_of_28/aditya_team_image.jpeg",
+      bio: "Leading DevClub with passion for innovation and community building. Full-stack developer with 5+ years experience.",
+      skills: ["React", "NextJS", "MongoDB", "HTML", "CSS", "EXPRESS", "TAILWIND CSS", "MONGO DATABASE", "DOM", "UNIT TEST", "PERFORMANCE OPTIMIZE", "SSR", "TYPESCRIPT", "PYTHON", "REACT NATIVE", "SOLIDITY", "DOCKER", "NODE", "GIT", "GITHUB", "LINUX", "WORDPRESS", "VPS", "VERCEL", "UX/UI DESIGN", "PRODUCT DESIGN", "FIGMA", "ADOBE XD", "WIREFRAME", "WEB3", "AI/ML", "NLP METHODS", "LLM MODELS", "SMART CONTRACTS", "CI & CD", "BLOCKCHAIN", "JENKINS", "AWS SERVICES", "VECTORS EMBEDDINGS"],
       social: {
-        github: "https://github.com/arjunmehta",
-        linkedin: "https://linkedin.com/in/arjunmehta",
-        twitter: "https://twitter.com/arjunmehta"
+        github: "https://github.com/",
+        linkedin: "https://www.linkedin.com/in/adityainnovates/",
       },
-      graduationYear: "2025",
+      graduationYear: "2028",
       yearsActive: ["2024", "2025"]
     },
     {
       id: 2,
-      name: "Priya Sharma",
+      name: "Ved Pawar",
       role: "Vice President",
-      avatar: "https://randomuser.me/api/portraits/women/44.jpg",
-      bio: "Passionate about creating inclusive tech spaces and mentoring newcomers. UI/UX designer and frontend developer.",
-      skills: ["UI/UX Design", "React", "Figma", "Mentorship"],
+      avatar: "",
+      bio: "Passionate about creating inclusive tech spaces and mentoring newcomers. Contributing to open-source for 2+ years.",
+      skills: ["React", "Node.js", "Express.js", "MongoDB", "Next.js", "Mentorship", "Kubernetes", "Docker", "Git", "Github"],
       social: {
-        github: "https://github.com/priyasharma",
-        linkedin: "https://linkedin.com/in/priyasharma",
-        dribbble: "https://dribbble.com/priyasharma"
+        github: "https://github.com/vedpawar2254",
+        linkedin: "https://www.linkedin.com/in/vedpawar2254/",
       },
-      graduationYear: "2025",
-      yearsActive: ["2023", "2024", "2025"]
+      graduationYear: "2028",
+      yearsActive: ["2024", "2025"]
     },
     {
       id: 3,
-      name: "Rahul Verma",
-      role: "Technical Lead",
-      avatar: "https://randomuser.me/api/portraits/men/65.jpg",
-      bio: "Backend enthusiast who loves building scalable systems. Organizes hackathons and technical workshops.",
-      skills: ["Python", "Django", "PostgreSQL", "AWS", "Docker"],
+      name: "Rohan Singh",
+      role: "Secretary",
+      avatar: "/images/team/class_of_28/rohan_team_image.jpeg",
+      bio: "Product Manager and Freelancer with over 3+ years of experience. Managing internal operations and public relations.",
+      skills: ["Product Management", "React", "NodeJS", "HTML/CSS", "ExpressJS", "MongoDB", "Product Design", "Social Media Marketing", "Financial Databases", "MS-Suite/G-Suite", "Python", "C++", "Risk Management", "Git/Github", "Postman"],
       social: {
-        github: "https://github.com/rahulverma",
-        linkedin: "https://linkedin.com/in/rahulverma"
+        github: "https://github.com/r0hansng",
+        linkedin: "https://www.linkedin.com/in/rohansng/"
       },
-      graduationYear: "2024",
-      yearsActive: ["2023", "2024"]
+      graduationYear: "2028",
+      yearsActive: ["2024", "2025"]
     },
     {
       id: 4,
-      name: "Sneha Patel",
-      role: "Events Coordinator",
-      avatar: "https://randomuser.me/api/portraits/women/68.jpg",
-      bio: "Event planning wizard who brings amazing speakers and creates memorable experiences for the community.",
-      skills: ["Event Management", "Public Speaking", "Marketing", "Networking"],
+      name: "Rajdeep Sanyal",
+      role: "Executive",
+      avatar: "/images/team/class_of_28/rajdeep_team_image.jpeg",
+      bio: "The brain behind the events happening through DevClub. Coordinating events and workshops. 'Old Wolf' of the pack",
+      skills: ["Event Planning", "Team Management", "Finance", "Product Analysis"],
       social: {
-        linkedin: "https://linkedin.com/in/snehapatel",
-        twitter: "https://twitter.com/snehapatel"
+        linkedin: "https://www.linkedin.com/in/rajdeepsanyal/",
       },
-      graduationYear: "2024",
-      yearsActive: ["2023", "2024"]
+      graduationYear: "2028",
+      yearsActive: ["2024", "2025"]
     },
     {
       id: 5,
-      name: "Vikram Singh",
-      role: "Web Developer",
-      avatar: "https://randomuser.me/api/portraits/men/75.jpg",
-      bio: "Frontend specialist focused on creating beautiful, accessible web experiences. React and Vue.js expert.",
-      skills: ["JavaScript", "React", "Vue.js", "CSS", "Accessibility"],
+      name: "Rishav Diwan",
+      role: "Executive",
+      avatar: "/images/team/class_of_28/rishav_team_image.jpeg",
+      bio: "Managing text-content and PR of the club. We turn to him when need to wipe our faces clean.",
+      skills: ["Blog Writing", "Marketing", "SEO", "Public Relations", "Consulting", "Python", "Javascript", "React"],
       social: {
-        github: "https://github.com/vikramsingh",
-        linkedin: "https://linkedin.com/in/vikramsingh",
-        portfolio: "https://vikramsingh.dev"
+        linkedin: "https://www.linkedin.com/in/rishav-dewan/",
       },
-      graduationYear: "2026",
-      yearsActive: ["2024", "2025"]
+      graduationYear: "2028",
+      yearsActive: ["2025"]
     },
     {
       id: 6,
-      name: "Meera Joshi",
-      role: "Content Creator",
-      avatar: "https://randomuser.me/api/portraits/women/55.jpg",
-      bio: "Creates engaging content for social media and manages community outreach. Also a talented mobile app developer.",
-      skills: ["Content Writing", "Social Media", "Flutter", "Dart", "Photography"],
+      name: "Hardik Jaiswal",
+      role: "Maven",
+      avatar: "/images/team/class_of_28/hardik_team_image.jpeg",
+      bio: "Python Developer with a keen interest in Artificial Intelligence and Deep Learning. The 'Deadpool' of the club.",
+      skills: ["Public Speaking", "Python", "Django", "FastAPI", "React", "NodeJS", "MongoDB", "ExpressJS", "Flask", "Postman"],
       social: {
-        github: "https://github.com/meerajoshi",
-        linkedin: "https://linkedin.com/in/meerajoshi",
-        instagram: "https://instagram.com/meerajoshi"
+        linkedin: "https://www.linkedin.com/in/pythonicforge/",
+        github: "https://github.com/pythonicforge"
       },
-      graduationYear: "2026",
-      yearsActive: ["2024", "2025"]
+      graduationYear: "2028",
+      yearsActive: ["2024"]
     },
     {
       id: 7,
-      name: "Siddharth Rao",
-      role: "DevOps Engineer",
-      avatar: "https://randomuser.me/api/portraits/men/23.jpg",
-      bio: "Cloud infrastructure enthusiast who ensures our projects run smoothly. Passionate about automation and CI/CD.",
-      skills: ["AWS", "Docker", "Kubernetes", "Jenkins", "Terraform"],
+      name: "Raghav Gupta",
+      role: "Maven",
+      avatar: "/images/team/class_of_28/raghav_team_image.jpeg",
+      bio: "Backend Developer with an knack for learning new technologies. The sport-freak of the club.",
+      skills: ["MongoDB", "React", "NodeJS", "ExpressJS", "HTML/CSS", "Postman", "NextJS", "Prisma"],
+      social: {
+        github: "https://github.com/Raghavg18",
+        linkedin: "https://www.linkedin.com/in/raghav-gupta-b890b7323/",
+      },
+      graduationYear: "2028",
+      yearsActive: ["2024", "2025"]
+    },
+    {
+      id: 8,
+      name: "Avneet Singh",
+      role: "Maven",
+      avatar: "/images/team/class_of_28/avneet_team_image.jpeg",
+      bio: "UI/UX designer, growth Consultant and a freelancer with 3+ years in the industry. Crafting clean and easy to use UIs at DevClub.",
+      skills: ["UI Design", "Figma", "Framer", "Python", "JavaScript", "Canva", "Adobe Illustrator"],
+      social: {
+        linkedin: "https://www.linkedin.com/in/avneet0419/",
+      },
+      graduationYear: "2028",
+      yearsActive: ["2024", "2025"]
+    },
+    {
+      id: 9,
+      name: "Kaavya Gala",
+      role: "Maven",
+      avatar: "/images/team/class_of_28/kaavya_team_image.jpeg",
+      bio: "UI/UX and graphic designer. Helping DevClub with visual static content. I love traveling to different places",
+      skills: ["UI Design", "Figma", "Framer", "Python", "JavaScript"],
       social: {
         github: "https://github.com/siddharthrao",
         linkedin: "https://linkedin.com/in/siddharthrao"
       },
-      graduationYear: "2025",
-      yearsActive: ["2023", "2024", "2025"]
+      graduationYear: "2028",
+      yearsActive: ["2024", "2025"]
     },
     {
-      id: 8,
-      name: "Ananya Gupta",
-      role: "UI/UX Designer",
-      avatar: "https://randomuser.me/api/portraits/women/21.jpg",
-      bio: "Design thinking advocate who creates user-centered experiences. Loves conducting user research and usability testing.",
-      skills: ["UI/UX Design", "Figma", "Adobe XD", "User Research", "Prototyping"],
+      id: 10,
+      name: "Shreyansh Agrawal",
+      role: "Maven",
+      avatar: "/images/team/class_of_28/shreyansh_team_image.jpeg",
+      bio: "FullStack Web Developer at DevClub. Explorer and Content creator of the club. 'Influencer'",
+      skills: ["React", "NodeJS", "Django", "MongoDB", "ExpressJS", "NextJS", "Content Creation"],
       social: {
         linkedin: "https://linkedin.com/in/ananyagupta",
-        dribbble: "https://dribbble.com/ananyagupta",
-        behance: "https://behance.net/ananyagupta"
+        youtube: "https://www.youtube.com/@shreyansh_agrawal",
       },
-      graduationYear: "2026",
-      yearsActive: ["2025",]
-    }
+      graduationYear: "2028",
+      yearsActive: ["2024",]
+    },
+    {
+      id: 11,
+      name: "Yug Johri",
+      role: "Maven",
+      avatar: "/images/team/class_of_28/yug_team_image.jpeg",
+      bio: "'I don't know I just got here'. Blockchain enthusiast and quick learner. The 'Johri' surname is justified.",
+      skills: ["Blockchain", "Python", "Javascript", "BlockChain", "Prototyping"],
+      social: {
+        linkedin: "https://linkedin.com/in/ananyagupta",
+      },
+      graduationYear: "2028",
+      yearsActive: ["2024", "2025"]
+    },
+    {
+      id: 12,
+      name: "Abhinav Bajpai",
+      role: "Maven",
+      avatar: "/images/team/class_of_28/abhinav_team_image.jpeg",
+      bio: "App Development enthusiast at DevClub. Has found te perfect balance between DSA and Dev. Master Oogway of the club.",
+      skills: ["UI/UX Design", "Figma", "Adobe XD", "User Research", "Prototyping"],
+      social: {
+        linkedin: "https://www.linkedin.com/in/abhinavbajpai30/",
+      },
+      graduationYear: "2028",
+      yearsActive: ["2024", "2025"]
+    },
+    {
+      id: 13,
+      name: "Aryan Vibhuti",
+      role: "Maven",
+      avatar: "/images/team/class_of_28/aryan_team_image.jpeg",
+      bio: "'Working from the shadows'. Red teamer and pen-testing expert. Cinematographer of the club.",
+      skills: ["Penetration testing", "Cybersecurity", "Red Teaming", "Photography", "Filmmaking", "Python", "GoLang", "Javascript"],
+      social: {
+        linkedin: "https://www.linkedin.com/in/aryan-vibhuti-57b322163/",
+      },
+      graduationYear: "2028",
+      yearsActive: ["2024", "2025"]
+    },
+    {
+      id: 14,
+      name: "Rudra Choudhary",
+      role: "Maven",
+      avatar: "/images/team/class_of_28/rudra_team_image.jpeg",
+      bio: "'Working from the shadows'. Blue teamer and Networking geek. Potential 'Netaji (Policymaker)'",
+      skills: ["Networking", "Cybersecurity", "Blue Teaming", "Filmmaking", "Python", "Javascript"],
+      social: {
+        linkedin: "https://www.linkedin.com/in/rudra-choudhary-b27b41306/",
+      },
+      graduationYear: "2028",
+      yearsActive: ["2024", "2025"]
+    },
   ];
 
-  // Get all unique years from team members
   const allYears = [...new Set(teamMembers.flatMap(member => member.yearsActive))].sort((a, b) => b - a)
   const yearOptions = ["All Years", ...allYears]
 
-  // Filter team members based on selected year
   const filteredMembers = selectedYear === "All Years"
     ? teamMembers
     : teamMembers.filter(member => member.yearsActive.includes(selectedYear))

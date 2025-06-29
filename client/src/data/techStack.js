@@ -39,4 +39,12 @@ export const techStackMap = {
     label: "Socket.io",
     className: "bg-black text-white dark:bg-white/20 dark:text-white",
   },
+  "JavaScript": {
+    label: "JavaScript",
+    className: "bg-yellow-100 text-yellow-800 dark:bg-yellow-500/20 dark:text-yellow-400",
+  },
+  "TypeScript": {
+    label: "TypeScript",
+    className: "bg-blue-200 text-blue-900 dark:bg-blue-400/20 dark:text-blue-300",
+  },
 }

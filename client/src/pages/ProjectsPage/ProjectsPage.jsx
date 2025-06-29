@@ -1,46 +1,8 @@
 import { motion } from "framer-motion"
 import ProjectCard from '../../components/ProjectCard/ProjectCard'
-import { techStackMap } from '../../data/techStack'
+import { projects } from "../../data/projectsData"
 
 const ProjectsPage = () => {
-    const dummyProjects = [
-        {
-            id: 1,
-            yearOfDevelopment: "2024",
-            projectName: "CampusConnect",
-            projectImage: "https://placehold.co/300x200?text=CampusConnect",
-            techStack: ["React", "Node.js", "MongoDB", "Tailwind"].map(t => techStackMap[t]),
-            projectLiveLink: "Live",
-            projectGitHubLink: "GitHub",
-        },
-        {
-            id: 2,
-            yearOfDevelopment: "2023",
-            projectName: "DevBoard",
-            projectImage: "https://placehold.co/300x200?text=DevBoard",
-            techStack: ["Next.js", "Firebase", "Chakra UI"].map(t => techStackMap[t]),
-            projectLiveLink: "Live",
-            projectGitHubLink: "GitHub",
-        },
-        {
-            id: 3,
-            yearOfDevelopment: "2022",
-            projectName: "CodeShare",
-            projectImage: "https://placehold.co/300x200?text=CodeShare",
-            techStack: ["Vue", "Express", "Socket.io"].map(t => techStackMap[t]),
-            projectLiveLink: "Live",
-            projectGitHubLink: "GitHub",
-        },
-        {
-            id: 4,
-            yearOfDevelopment: "2022",
-            projectName: "CodeShare",
-            projectImage: "https://placehold.co/300x200?text=CodeShare",
-            techStack: ["Vue", "Express", "Socket.io"].map(t => techStackMap[t]),
-            projectLiveLink: "Live",
-            projectGitHubLink: "GitHub",
-        },
-    ]
 
     const containerVariants = {
         hidden: { opacity: 0 },
@@ -101,7 +63,7 @@ const ProjectsPage = () => {
                 animate="visible"
                 variants={containerVariants}
             >
-                {dummyProjects.map((project, index) => (
+                {projects.map((project, index) => (
                     <motion.div
                         key={project.id}
                         variants={cardVariants}

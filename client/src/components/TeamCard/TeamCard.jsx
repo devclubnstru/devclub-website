@@ -1,6 +1,6 @@
 import { motion } from "framer-motion"
 import { useRef, useState } from "react"
-import { IconBrandGithub, IconBrandLinkedin, IconBrandTwitter, IconBrandDribbble, IconWorld } from "@tabler/icons-react"
+import { IconBrandGithub, IconBrandLinkedin, IconBrandTwitter, IconBrandYoutube } from "@tabler/icons-react"
 
 const TeamCard = (props) => {
     const cardRef = useRef(null)
@@ -48,8 +48,8 @@ const TeamCard = (props) => {
                 return <IconBrandLinkedin className="w-4 h-4" />
             case 'twitter':
                 return <IconBrandTwitter className="w-4 h-4" />
-            case 'dribbble':
-                return <IconBrandDribbble className="w-4 h-4" />
+            case 'youtube':
+                return <IconBrandYoutube className="w-4 h-4" />
             default:
                 return <IconWorld className="w-4 h-4" />
         }
