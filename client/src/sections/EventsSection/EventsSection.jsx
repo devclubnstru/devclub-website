@@ -1,19 +1,8 @@
 import { Link } from "react-router-dom"
-import { motion, useScroll, useTransform } from "framer-motion"
-import { useRef } from "react"
+import { motion } from "framer-motion"
 import EventCard from "../../components/EventCard/EventCard"
 
 const EventsSection = () => {
-    const ref = useRef(null)
-    const { scrollYProgress } = useScroll({
-        target: ref,
-        offset: ["start end", "end start"]
-    })
-
-    // Parallax transforms for text elements only
-    const conductedTextY = useTransform(scrollYProgress, [0, 1], [0, -30])
-    const titleY = useTransform(scrollYProgress, [0, 1], [0, -60])
-    const subtitleY = useTransform(scrollYProgress, [0, 1], [0, -90])
 
     const dummyEvents = [
         {
@@ -92,7 +81,7 @@ const EventsSection = () => {
     }
 
     return (
-        <section ref={ref} className="relative z-10 flex flex-col items-center justify-center space-y-4 mb-24 sm:p-2 px-4">
+        <section className="relative z-10 flex flex-col items-center justify-center space-y-4 mb-24 sm:p-2 px-4">
             <motion.div
                 className="flex flex-col items-center justify-center space-y-2"
                 variants={headingVariants}
@@ -100,25 +89,14 @@ const EventsSection = () => {
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.3 }}
             >
-                <motion.h1 
-                    className="text-md w-fit font-black text-center bg-gradient-to-r dark:from-green-400 dark:via-amber-200 dark:to-green-400 from-green-600 via-amber-400 to-green-600 bg-clip-text text-transparent"
-                    style={{ y: conductedTextY }}
-                >
+                <h1 className="text-md w-fit font-black text-center bg-gradient-to-r dark:from-green-400 dark:via-amber-200 dark:to-green-400 from-green-600 via-amber-400 to-green-600 bg-clip-text text-transparent">
                     Events we've conducted
-                </motion.h1>
+                </h1>
                 <div className="text-center">
-                    <motion.p 
-                        className="text-3xl mb-2 font-semibold"
-                        style={{ y: titleY }}
-                    >
-                        Collaborate
-                    </motion.p>
-                    <motion.p 
-                        className="dark:text-text-muted-dark text-text-muted-light"
-                        style={{ y: subtitleY }}
-                    >
+                    <p className="text-3xl mb-2 font-semibold">Collaborate</p>
+                    <p className="dark:text-text-muted-dark text-text-muted-light">
                         At DevClub, collaboration is at the core of everything we do.<br /> Through events and initiatives, we explore ideas and build them into reality.
-                    </motion.p>
+                    </p>
                 </div>
             </motion.div>
             <div className="py-8 mx-auto container">

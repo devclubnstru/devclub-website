@@ -1,21 +1,9 @@
 import { techStackMap } from "../../data/techStack"
 import ProjectCard from "../../components/ProjectCard/ProjectCard"
 import { Link } from "react-router-dom"
-import { motion, useScroll, useTransform } from "framer-motion"
-import { useRef } from "react"
+import { motion } from "framer-motion"
 
 const ProjectsSection = () => {
-    const ref = useRef(null)
-    const { scrollYProgress } = useScroll({
-        target: ref,
-        offset: ["start end", "end start"]
-    })
-
-    // Parallax transforms for text elements only
-    const workedOnTextY = useTransform(scrollYProgress, [0, 1], [0, -30])
-    const titleY = useTransform(scrollYProgress, [0, 1], [0, -60])
-    const subtitleY = useTransform(scrollYProgress, [0, 1], [0, -90])
-
     const dummyProjects = [
         {
             id: 1,
@@ -85,7 +73,7 @@ const ProjectsSection = () => {
     }
 
     return (
-        <section ref={ref} className="flex flex-col items-center justify-center space-y-4 mb-24 sm:p-2 px-4">
+        <section className="flex flex-col items-center justify-center space-y-4 mb-24 sm:p-2 px-4">
             <motion.div 
                 className="flex flex-col items-center justify-center space-y-2"
                 variants={headingVariants}
@@ -93,27 +81,16 @@ const ProjectsSection = () => {
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.3 }}
             >
-                <motion.h1 
-                    className="text-md w-fit font-black text-center bg-gradient-to-r dark:from-violet-500 dark:to-pink-300 from-violet-800 to-pink-500 bg-clip-text text-transparent"
-                    style={{ y: workedOnTextY }}
-                >
+                <h1 className="text-md w-fit font-black text-center bg-gradient-to-r dark:from-violet-500 dark:to-pink-300 from-violet-800 to-pink-500 bg-clip-text text-transparent">
                     Projects we've worked on
-                </motion.h1>
+                </h1>
                 <div className="text-center">
-                    <motion.h2 
-                        className="text-3xl mb-2 font-semibold"
-                        style={{ y: titleY }}
-                    >
-                        Innovate
-                    </motion.h2>
-                    <motion.p 
-                        className="dark:text-text-muted-dark text-text-muted-light"
-                        style={{ y: subtitleY }}
-                    >
+                    <h2 className="text-3xl mb-2 font-semibold">Innovate</h2>
+                    <p className="dark:text-text-muted-dark text-text-muted-light">
                         We love building tools that make life easier and ideas come to life.
                         <br />
                         At DevClub, it's all about solving real problems through clean, thoughtful tech.
-                    </motion.p>
+                    </p>
                 </div>
             </motion.div>
             <div className="py-8 mx-auto container">

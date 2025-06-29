@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom"
-import { motion, useScroll, useTransform } from "framer-motion"
-import { useRef } from "react"
+import { motion } from "framer-motion"
 import TestimonialCard from "../../components/TestimonialCard/TestimonialCard"
 import Marquee from "../../components/ui/Marquee/Marquee"
 
@@ -73,17 +72,6 @@ const dummyTestimonials = [
 ]
 
 const TestimonialsSection = () => {
-    const ref = useRef(null)
-    const { scrollYProgress } = useScroll({
-        target: ref,
-        offset: ["start end", "end start"]
-    })
-
-    // Parallax transforms for text elements only
-    const echoesTextY = useTransform(scrollYProgress, [0, 1], [0, -30])
-    const titleY = useTransform(scrollYProgress, [0, 1], [0, -60])
-    const subtitleY = useTransform(scrollYProgress, [0, 1], [0, -90])
-
     const marqueeTestimonials = [...dummyTestimonials, ...dummyTestimonials]
 
     const headingVariants = {
@@ -96,7 +84,7 @@ const TestimonialsSection = () => {
     }
 
     return (
-        <section ref={ref} className="flex flex-col items-center justify-center space-y-4 mb-24 sm:p-2 px-4">
+        <section className="flex flex-col items-center justify-center space-y-4 mb-24 sm:p-2 px-4">
             <motion.div 
                 className="flex flex-col items-center justify-center space-y-2"
                 variants={headingVariants}
@@ -104,26 +92,15 @@ const TestimonialsSection = () => {
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.3 }}
             >
-                <motion.h1 
-                    className="text-md w-fit font-black text-center bg-gradient-to-r dark:from-cyan-500 dark:via-cyan-200 dark:to-cyan-500 from-cyan-600 via-cyan-400 to-cyan-600 bg-clip-text text-transparent"
-                    style={{ y: echoesTextY }}
-                >
+                <h1 className="text-md w-fit font-black text-center bg-gradient-to-r dark:from-cyan-500 dark:via-cyan-200 dark:to-cyan-500 from-cyan-600 via-cyan-400 to-cyan-600 bg-clip-text text-transparent">
                     Echoes of DevClub
-                </motion.h1>
+                </h1>
                 <div className="text-center">
-                    <motion.p 
-                        className="text-3xl mb-2 font-semibold"
-                        style={{ y: titleY }}
-                    >
-                        Elevate
-                    </motion.p>
-                    <motion.p 
-                        className="dark:text-text-muted-dark text-text-muted-light"
-                        style={{ y: subtitleY }}
-                    >
+                    <p className="text-3xl mb-2 font-semibold">Elevate</p>
+                    <p className="dark:text-text-muted-dark text-text-muted-light">
                         At DevClub, our journey is shaped by the people behind it.<br />
                         Hear firsthand from members and mentors who make our community thrive.
-                    </motion.p>
+                    </p>
                 </div>
             </motion.div>
             <div className="py-8 mx-auto container">
