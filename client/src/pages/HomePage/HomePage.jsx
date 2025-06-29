@@ -12,7 +12,7 @@ const HomePage = () => {
       <TestimonialsSection />
 
       {/* Words Marquee Section */}
-      <section className="relative w-full py-16">
+      {/* <section className="relative w-full py-16">
         <div className="w-full overflow-hidden whitespace-nowrap">
           <div className="inline-block text-4xl lg:text-7xl text-text-light/80 dark:text-text-dark/80 animate-marquee font-hero">
             <span> To the Students . For the Students . By the Students . </span>
@@ -29,7 +29,7 @@ const HomePage = () => {
             <span> To the Students . For the Students . By the Students . </span>
           </div>
         </div>
-      </section>
+      </section> */}
     </main>
   )
 }
