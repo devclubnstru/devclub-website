@@ -7,67 +7,67 @@ import Marquee from "../../components/ui/Marquee/Marquee"
 const dummyTestimonials = [
     {
         id: 1,
-        name: "Aarav Sharma",
-        role: "Frontend Developer",
-        avatar: "https://randomuser.me/api/portraits/men/32.jpg",
-        testimonial: "DevClub gave me the confidence to build real-world projects and collaborate with amazing people. The mentorship and community are unmatched!",
+        name: "Kevish Sewliya",
+        role: "Maven & Frontend Developer",
+        avatar: "images/team/class_of_28/kevish_team_image.jpeg",
+        testimonial: "DevClub gave me the confidence to build real-world projects and collaborate with amazing people. The community support is unmatched!",
         graduationYear: "2028"
     },
     {
         id: 2,
-        name: "Priya Patel",
-        role: "UI/UX Designer",
-        avatar: "https://randomuser.me/api/portraits/women/44.jpg",
-        testimonial: "Joining DevClub was the best decision for my design journey. I learned so much and made friends for life!",
+        name: "Rohan Singh",
+        role: "Secretary",
+        avatar: "images/team/class_of_28/rohan_team_image.jpeg",
+        testimonial: "Building DevClub from scratch has taught me things which I otherwise would not have learnt on my own.",
         graduationYear: "2028"
     },
     {
         id: 3,
-        name: "Rahul Verma",
-        role: "Backend Lead",
-        avatar: "https://randomuser.me/api/portraits/men/65.jpg",
-        testimonial: "The collaborative spirit at DevClub helped me grow as a developer and a leader. Highly recommended for anyone passionate about tech.",
-        graduationYear: "2023"
+        name: "Rishik",
+        role: "Maven & Backend Developer",
+        avatar: "images/team/class_of_28/rishik_team_image.jpeg",
+        testimonial: "The collaborative spirit at DevClub helped me grow as a developer. Highly recommended for anyone passionate about tech.",
+        graduationYear: "2028"
     },
     {
         id: 4,
-        name: "Sneha Singh",
-        role: "Mentor",
-        avatar: "https://randomuser.me/api/portraits/women/68.jpg",
+        name: "Hardik Jaiswal",
+        role: "Maven & AI/ML Developer",
+        avatar: "images/team/class_of_28/hardik_team_image.jpeg",
         testimonial: "Mentoring at DevClub has been a rewarding experience. The enthusiasm and curiosity of the members is inspiring!",
-        graduationYear: "2023"
+        graduationYear: "2028"
     },
     {
         id: 5,
-        name: "Vikram Joshi",
-        role: "Full Stack Developer",
-        avatar: "https://randomuser.me/api/portraits/men/75.jpg",
-        testimonial: "DevClub's hands-on projects and peer learning helped me land my first internship. The community is always supportive.",
+        name: "Krishna Dave",
+        role: "Maven & Web Developer",
+        avatar: "images/team/class_of_28/krishna_team_image.jpeg",
+        testimonial: "DevClub's hands-on projects and peer learning helped me crack GSoC. The community is always supportive.",
         graduationYear: "2028"
     },
     {
         id: 6,
-        name: "Meera Nair",
-        role: "Product Manager",
-        avatar: "https://randomuser.me/api/portraits/women/55.jpg",
-        testimonial: "I love how DevClub brings together people from different backgrounds to solve real problems. It's a great place to grow.",
-        graduationYear: "2023"
+        name: "Rishav Dewan",
+        role: "Executive",
+        avatar: "images/team/class_of_28/rishav_team_image.jpeg",
+        testimonial: "I love how DevClub brings together people from different backgrounds to solve problems. It's a great place to grow.",
+        graduationYear: "2028"
     },
     {
         id: 7,
-        name: "Siddharth Rao",
-        role: "Mobile App Developer",
-        avatar: "https://randomuser.me/api/portraits/men/23.jpg",
-        testimonial: "Building apps with DevClub taught me teamwork and agile development. The experience was invaluable.",
+        name: "Pushpendra Parihar",
+        role: "Associate & Web Developer",
+        avatar: "images/testimonials/pushpendra_testimonial_image.jpeg",
+        testimonial: "Building projects with DevClub taught me teamwork and agile development. The experience was invaluable. Their workshops are also very useful and helps me learn things easily.",
         graduationYear: "2028"
     },
     {
         id: 8,
-        name: "Ananya Gupta",
-        role: "Community Lead",
-        avatar: "https://randomuser.me/api/portraits/women/21.jpg",
-        testimonial: "Organizing events at DevClub has been a highlight of my college life. The energy and passion here are contagious!",
-        graduationYear: "2023"
+        name: "Ananya Narang",
+        role: "Associate and Web Developer",
+        avatar: "/images/testimonials/ananya_testimonial.jpeg",
+        testimonial: "The workshops and ElevateX Masterclasses are also very useful and helps me learn things easily. The community support is also a great motivator.",
+        graduationYear: "2028"
     }
 ]
 
@@ -112,9 +112,9 @@ const TestimonialsSection = () => {
                     viewport={{ once: true, amount: 0.3 }}
                 >
                     <h1 className="text-xl font-bold">Community Stories</h1>
-                    <Link to="/projects">
+                    {/* <Link to="/projects">
                         <button className="flex text-sm items-center justify-center w-fit font-black text-center bg-gradient-to-r dark:text-cyan-500 text-cyan-600 cursor-pointer">Know More &rarr;</button>
-                    </Link>
+                    </Link> */}
                 </motion.div>
                 <Marquee speed={58} direction="left">
                     {marqueeTestimonials.map((t, idx) => (
