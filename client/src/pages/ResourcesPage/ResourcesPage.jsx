@@ -1,20 +1,12 @@
 import { motion } from "framer-motion"
+import { useState, useRef } from "react"
+import { IconChevronUp, IconChevronDown } from "@tabler/icons-react"
 import ResourceCard from "../../components/ResourceCard/ResourceCard"
-import { resourceTypeMap } from "../../data/resourceType"
-import { resourceDomainMap } from "../../data/resourceDomain";
+import { resources } from "../../data/resourcesData"
 
 const ResourcesPage = () => {
-
-  const dummyResources = [
-    {
-      id: 1,
-      resourceName: "Mastering React",
-      channelName: "Chai aur Code",
-      thumbnailSrc: "https://www.youtube.com/embed/Ke90Tje7VS0",
-      resourceTypes: ["vid"].map(r => resourceTypeMap[r]),
-      domains: ["client"].map(d => resourceDomainMap[d])
-    },
-  ];
+  const scrollContainerRef = useRef(null)
+  const [showScrollButtons, setShowScrollButtons] = useState(false)
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -46,8 +38,30 @@ const ResourcesPage = () => {
     }
   }
 
+  const scrollUp = () => {
+    scrollContainerRef.current?.scrollBy({
+      top: -300,
+      behavior: 'smooth'
+    })
+  }
+
+  const scrollDown = () => {
+    scrollContainerRef.current?.scrollBy({
+      top: 300,
+      behavior: 'smooth'
+    })
+  }
+
+  const handleScroll = () => {
+    const container = scrollContainerRef.current
+    if (container) {
+      const { scrollTop, scrollHeight, clientHeight } = container
+      setShowScrollButtons(scrollHeight > clientHeight)
+    }
+  }
+
   return (
-    <div className='h-screen flex items-center flex-col p-2'>
+    <div className='h-screen flex items-center flex-col p-2 relative'>
       <motion.div 
         className='text-center p-2'
         initial="hidden"
@@ -70,12 +84,15 @@ const ResourcesPage = () => {
       </motion.div>
       
       <motion.div 
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 overflow-x-auto mt-6 scrollbar-hide px-2 py-8"
+        ref={scrollContainerRef}
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 overflow-x-auto mt-6 px-2 py-8 overflow-y-scroll max-h-[70vh] scrollbar-hide"
         initial="hidden"
         animate="visible"
         variants={containerVariants}
+        onScroll={handleScroll}
+        onLoad={handleScroll}
       >
-        {dummyResources.map((resource, index) => (
+        {resources.map((resource, index) => (
           <motion.div
             key={resource.id}
             variants={cardVariants}
@@ -85,6 +102,27 @@ const ResourcesPage = () => {
           </motion.div>
         ))}
       </motion.div>
+
+      {/* Scroll Buttons */}
+      {showScrollButtons && (
+        <>
+          <button
+            onClick={scrollUp}
+            className="fixed top-1/2 right-4 transform -translate-y-12 text-white p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110 z-10"
+            aria-label="Scroll up"
+          >
+            <IconChevronUp size={16} />
+          </button>
+          
+          <button
+            onClick={scrollDown}
+            className="fixed top-1/2 right-4 transform translate-y-12 text-white p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110 z-10"
+            aria-label="Scroll down"
+          >
+            <IconChevronDown size={16} />
+          </button>
+        </>
+      )}
     </div>
   )
 }

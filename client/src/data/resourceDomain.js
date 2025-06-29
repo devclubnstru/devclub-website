@@ -30,5 +30,13 @@ export const resourceDomainMap = {
   "appdev": {
     label: "App Development",
     className: "bg-teal-100 text-teal-800 dark:bg-teal-500/20 dark:text-teal-400",
-  }
+  },
+  "language": {
+    label: "Language",
+    className: "bg-lime-100 text-lime-800 dark:bg-lime-500/20 dark:text-lime-400",
+  },
+  "basics": {
+    label: "Basics",
+    className: "bg-pink-100 text-pink-800 dark:bg-pink-500/20 dark:text-pink-400",
+  },
 }
