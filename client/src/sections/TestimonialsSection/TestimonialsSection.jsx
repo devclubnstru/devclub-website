@@ -58,7 +58,7 @@ const dummyTestimonials = [
         name: "Pushpendra Parihar",
         role: "Associate & Web Developer",
         avatar: "images/testimonials/pushpendra_testimonial_image.jpeg",
-        testimonial: "Building projects with DevClub taught me teamwork and agile development. The experience was invaluable. Their workshops are also very useful and helps me learn things easily.",
+        testimonial: "Building projects with DevClub taught me teamwork and agile development. The experience was invaluable.",
         graduationYear: "2028"
     },
     {
