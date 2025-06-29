@@ -40,7 +40,7 @@ const Footer = () => {
   }
 
   return (
-    <footer className="relative min-h-[45vh] bg-white dark:bg-[#090909] overflow-hidden border-t-2 border-dashed sm:mt-24">
+    <footer className="relative min-h-[45vh] bg-white dark:bg-[#090909] overflow-hidden border-t border-stone-500/40 sm:mt-24">
       <motion.div 
         className="flex flex-col md:flex-row gap-8 px-6 sm:px-8 md:px-12 lg:px-20 py-8 justify-between items-start z-10 relative w-full max-w-7xl mx-auto"
         variants={fadeInVariants}
