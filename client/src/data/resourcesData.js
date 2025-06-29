@@ -32,7 +32,7 @@ export const resources = [
         channelName: "Chai Aur Code",
         thumbnailSrc: "https://www.youtube.com/embed/videoseries?si=ri5wc0qyOo8Xu1w_&amp;list=PLu71SKxNbfoDqgPchmvIsL4hTnJIrtige",
         resourceTypes: ["playlist"].map(r => resourceTypeMap[r]),
-        domains: ["client"].map(d => resourceDomainMap[d])
+        domains: ["client", "framework"].map(d => resourceDomainMap[d])
     },
     {
         id: 4,
@@ -40,7 +40,7 @@ export const resources = [
         channelName: "Cosden Solutions",
         thumbnailSrc: "https://www.youtube.com/embed/videoseries?si=1YsuQR3vJruSu8LI&amp;list=PLApy4UwQM3UqAkfITNFzlqoD__UI6X5pb",
         resourceTypes: ["playlist"].map(r => resourceTypeMap[r]),
-        domains: ["client"].map(d => resourceDomainMap[d])
+        domains: ["client", "framework"].map(d => resourceDomainMap[d])
     },
     {
         id: 5,
@@ -48,7 +48,7 @@ export const resources = [
         channelName: "Cosden Solutions",
         thumbnailSrc: "https://www.youtube.com/embed/videoseries?si=tkH1fEOin2errYnQ&amp;list=PLApy4UwQM3Updrw-4mOXTwgsWar9bqk6i",
         resourceTypes: ["vid"].map(r => resourceTypeMap[r]),
-        domains: ["client"].map(d => resourceDomainMap[d])
+        domains: ["client", "framework"].map(d => resourceDomainMap[d])
     },
     {
         id: 6,
@@ -56,7 +56,7 @@ export const resources = [
         channelName: "Traversy Media",
         thumbnailSrc: "https://www.youtube.com/embed/_1xa8Bsho6A?si=pe69TO8IOi0CqFBu",
         resourceTypes: ["vid"].map(r => resourceTypeMap[r]),
-        domains: ["server"].map(d => resourceDomainMap[d])
+        domains: ["server", "framework"].map(d => resourceDomainMap[d])
     },
     {
         id: 7,
@@ -64,14 +64,14 @@ export const resources = [
         channelName: "Traversy Media",
         thumbnailSrc: "https://www.youtube.com/embed/32M1al-Y6Ag?si=TQ_XN3EPw5UaQzui",
         resourceTypes: ["vid"].map(r => resourceTypeMap[r]),
-        domains: ["server"].map(d => resourceDomainMap[d])
+        domains: ["server", "framework"].map(d => resourceDomainMap[d])
     },
     {
         id: 8,
         resourceName: "Backend Using JavaScript",
-        channelName: "Traversy Media",
+        channelName: "Chai Aur Code",
         thumbnailSrc: "https://www.youtube.com/embed/videoseries?si=iMpM2zq3E5CufJzr&amp;list=PLu71SKxNbfoBGh_8p_NS-ZAh6v7HhYqHW",
         resourceTypes: ["playlist"].map(r => resourceTypeMap[r]),
-        domains: ["server"].map(d => resourceDomainMap[d])
+        domains: ["server", "framework"].map(d => resourceDomainMap[d])
     },
 ];

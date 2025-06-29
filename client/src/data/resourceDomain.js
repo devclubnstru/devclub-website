@@ -39,4 +39,8 @@ export const resourceDomainMap = {
     label: "Basics",
     className: "bg-pink-100 text-pink-800 dark:bg-pink-500/20 dark:text-pink-400",
   },
+  "framework": {
+    label: "Framework",
+    className: "bg-rose-100 text-rose-800 dark:bg-rose-500/20 dark:text-rose-400",
+  },
 }

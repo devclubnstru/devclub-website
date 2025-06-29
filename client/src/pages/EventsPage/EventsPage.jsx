@@ -108,15 +108,15 @@ const EventsPage = () => {
         <>
           <button
             onClick={scrollUp}
-            className="fixed top-1/2 right-4 transform -translate-y-12 text-white p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110 z-10"
+            className="fixed top-1/2 right-4 transform -translate-y-12 text-inherit border shadow-lg p-3 rounded-full transition-all duration-200 hover:scale-110 z-10"
             aria-label="Scroll up"
           >
             <IconChevronUp size={16} />
           </button>
-          
+
           <button
             onClick={scrollDown}
-            className="fixed top-1/2 right-4 transform translate-y-12 text-white p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110 z-10"
+            className="fixed top-1/2 right-4 transform translate-y-12 text-inherit border shadow-lg p-3 rounded-full transition-all duration-200 hover:scale-110 z-10"
             aria-label="Scroll down"
           >
             <IconChevronDown size={16} />
