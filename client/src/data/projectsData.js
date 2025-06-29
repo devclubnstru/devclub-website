@@ -31,10 +31,10 @@ export const projects = [
         {
             id: 4,
             yearOfDevelopment: "2024",
-            projectName: "DCODE Platform v1",
+            projectName: "DCODE Platform",
             projectImage: "/images/projects/dcode-platform-v1.png",
             techStack: ["React", "Node.js", "MongoDB", "Tailwind", "Express"].map(t => techStackMap[t]),
-            projectLiveLink: "Live",
-            projectGitHubLink: "GitHub",
+            projectLiveLink: "https://dcode.codex",
+            projectGitHubLink: "https://github.com/devclub-nstru/DCODE-v2",
         },
     ]

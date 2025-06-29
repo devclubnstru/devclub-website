@@ -67,7 +67,7 @@ const EventCard = (props) => {
 
                 {/* Image */}
                 <div className="rounded-lg overflow-hidden">
-                    <img className="w-full object-cover" src={props.eventThumbnail} alt={props.eventName} />
+                    <img className="w-[350px] h-[200px] object-cover" src={props.eventThumbnail} alt={props.eventName} />
                 </div>
 
                 <p className="text-xs text-center my-2 text-text-muted-light/70 dark:text-text-muted-dark/70">
