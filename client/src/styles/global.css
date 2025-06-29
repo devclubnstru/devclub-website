@@ -39,6 +39,7 @@
   --font-hero: "Grandspan Tall";
   --font-ballyane: "Ballyane";
 }
+
 @keyframes waveGradient {
   0% {
     background-position: 0% 50%;
@@ -57,6 +58,10 @@
   }
 }
 
+* {
+  cursor: none !important;
+}
+
 .animate-wave-gradient {
   background-size: 300% 300%;
   animation: waveGradient 5s ease-in-out infinite;
@@ -73,4 +78,79 @@
 .liquid-glass {
   backdrop-filter: url(#liquid-glass);
   -webkit-backdrop-filter: url(#liquid-glass);
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-25%);
+  }
+}
+
+@keyframes marquee-reverse {
+  0% {
+    transform: translateX(-25%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 15s linear infinite;
+}
+
+.animate-marquee-reverse {
+  animation: marquee-reverse 15s linear infinite;
+}
+
+/* Holo layers inside the card */
+.card-holo {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-holo::before,
+.card-holo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  mix-blend-mode: color-dodge;
+  transition: background-position 0.1s ease;
+}
+
+.card-holo::before {
+  background-image: linear-gradient(
+    115deg,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(200, 200, 255, 0.15) 25%,
+    transparent 50%,
+    rgba(255, 200, 255, 0.15) 75%,
+    rgba(255, 255, 255, 0.2) 100%
+  );
+  background-size: 300% 300%;
+}
+
+.card-holo::after {
+  background-image: url("sparkle.gif"), url("holo-texture.png");
+  background-size: cover;
+  opacity: 0.5;
+}
+
+.custom-cursor {
+  width: 24px;
+  height: 24px;
+  border-radius: 9999px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  background-color: white;
+  transition: transform 0.1s ease-out;
 }

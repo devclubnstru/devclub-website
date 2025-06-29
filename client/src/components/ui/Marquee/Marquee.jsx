@@ -1,7 +1,7 @@
 import { useRef, useEffect, useState } from "react"
 import { motion, useAnimation } from "framer-motion"
 
-const Marquee = ({ children, speed = 36, direction = "left" }) => {
+const Marquee = ({ children, speed = 36, direction = "left", showGradient = true }) => {
     const controls = useAnimation()
     const [pausedAt, setPausedAt] = useState(0)
     const marqueeRef = useRef(null)
@@ -47,10 +47,12 @@ const Marquee = ({ children, speed = 36, direction = "left" }) => {
 
     return (
         <div className="relative w-full overflow-x-hidden">
-            {/* Gradient mask - Left */}
-            <div className="pointer-events-none absolute left-0 top-0 h-full w-8 z-10 bg-gradient-to-r dark:from-background-dark-base dark:via-background-dark-base/80 from-gray-100 via-gray-100/80 to-transparent" />
-            {/* Gradient mask - Right */}
-            <div className="pointer-events-none absolute right-0 top-0 h-full w-8 z-10 bg-gradient-to-l dark:from-background-dark-base dark:via-background-dark-base/80 from-gray-100 via-gray-100/80 to-transparent" />
+            {showGradient && (
+                <>
+                    <div className="pointer-events-none absolute left-0 top-0 h-full w-8 z-10 bg-gradient-to-r dark:from-background-dark-base dark:via-background-dark-base/80 from-gray-100 via-gray-100/80 to-transparent" />
+                    <div className="pointer-events-none absolute right-0 top-0 h-full w-8 z-10 bg-gradient-to-l dark:from-background-dark-base dark:via-background-dark-base/80 from-gray-100 via-gray-100/80 to-transparent" />
+                </>
+            )}
             
             <motion.div
                 className="flex space-x-6"

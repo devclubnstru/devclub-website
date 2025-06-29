@@ -1,85 +1,139 @@
+import { useState } from "react"
 import { useTheme } from "../../../hooks/useTheme"
 import { Link } from "react-router-dom"
+import { motion, AnimatePresence } from "framer-motion"
 import {
   IconBrandGithubFilled,
   IconSunFilled,
   IconMoonFilled,
+  IconMenu2,
+  IconX,
 } from "@tabler/icons-react"
-import Button from "../../ui/Button/Button"
-
 
 const NavBar = () => {
-
-  const navigationItems = [
-    {
-      title: "Home",
-      link: "/"
-    },
-    {
-      title: "Events",
-      link: "/events"
-    },
-    {
-      title: "Projects",
-      link: "/projects"
-    },
-    {
-      title: "Resources",
-      link: "/resources"
-    },
-    {
-      title: "Team",
-      link: "/team"
-    },
-    {
-      title: "About",
-      link: "/about"
-    },
-  ]
-
+  const [menuOpen, setMenuOpen] = useState(false)
   const { theme, toggleTheme } = useTheme()
 
+  const navigationItems = [
+    { title: "Home", link: "/" },
+    { title: "Events", link: "/events" },
+    // { title: "Achievements", link: "/achievements" },
+    { title: "Projects", link: "/projects" },
+    { title: "Resources", link: "/resources" },
+    { title: "Team", link: "/team" },
+    // { title: "About", link: "/about" },
+  ]
+
+  const menuVariants = {
+    closed: {
+      opacity: 0,
+      y: -20,
+      transition: {
+        duration: 0.2,
+        ease: "easeInOut",
+      },
+    },
+    open: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.3,
+        ease: "easeOut",
+        staggerChildren: 0.1,
+        delayChildren: 0.1,
+      },
+    },
+  }
+
+  const itemVariants = {
+    closed: {
+      opacity: 0,
+      x: -20,
+    },
+    open: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.3,
+        ease: "easeOut",
+      },
+    },
+  }
+
+  const buttonVariants = {
+    closed: { rotate: 0 },
+    open: { rotate: 90 },
+  }
+
   return (
-    <header className="sm:flex hidden justify-between items-center sticky top-0 z-50 w-full backdrop-blur-2xl /backdrop-saturate-200 bg-background-light-base/80 dark:bg-background-dark-base/80 border-b border-black/10 dark:border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.1)] liquid-glass bg-gradient-to-b dark:from-background-light-1/5 dark:to-background-light-1/1">
+    <header className="sticky top-0 z-50 w-full backdrop-blur-sm bg-background-light-base/80 dark:bg-background-dark-base/80 border-b border-black/10 dark:border-white/10 shadow-md">
+      <div className="container mx-auto flex justify-between items-center py-4 px-4 md:px-8">
+        {/* Logo */}
+        <Link to="/">
+          <h1 className="font-brand text-4xl font-black text-text-light dark:text-text-dark select-none">
+            devclub.
+          </h1>
+        </Link>
 
-      {/* <header className="fixed top-5 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-5xl rounded-[2rem]  bg-gradient-to-b from-white/70 to-white/30 dark:from-background-light-base/5 dark:to-background-dark-2/5 backdrop-blur-[24px] backdrop-saturate-[300%] border border-white/20 dark:border-white/10 /shadow-[inset_0_1px_2px_rgba(255,255,255,0.3),0_12px_32px_rgba(0,0,0,0.15)] transition-all duration-300 liquid-glass shadow-md"> */}
-
-      <div className="container mx-auto flex justify-between items-center py-4 px-2">
-        <div>
-          <Link to="/">
-            <h1 className="font-brand text-5xl font-black text-text-light dark:text-text-dark select-none">
-              devclub.
-            </h1>
-          </Link>
-        </div>
-        <ul className="flex justify-between space-x-8">
-          {
-            navigationItems.map((item, index) => (
-              <Link
-                key={index}
-                to={item.link}
-                className="dark:hover:text-text-dark hover:text-text-light text-text-light/75 dark:text-text-dark/85 transition-all duration-300"
-              >
-                <li>{item.title}</li>
-              </Link>
-            ))
-          }
+        {/* Desktop Nav */}
+        <ul className="hidden lg:flex justify-between space-x-8">
+          {navigationItems.map((item, index) => (
+            <Link
+              key={index}
+              to={item.link}
+              className="hover:text-blue-500 text-text-light/75 dark:text-text-dark/85 transition-all duration-300"
+            >
+              <li>{item.title}</li>
+            </Link>
+          ))}
         </ul>
-        <div className="flex space-x-2">
-          <a
-            href="https://github.com/devclub-nstru"
-            target="_blank"
-          >
-            {/* <button className="flex dark:bg-background-dark-base border border-black dark:border-white bg-background-light-base dark:hover:bg-background-light-base dark:hover:text-text-light hover:bg-background-dark-base hover:text-text-dark px-4 py-2 rounded-4xl cursor-pointer transition-colors duration-250"></button> */}
-            <Button variant="outline">
-              <IconBrandGithubFilled /><span>Github</span>
-            </Button>
-          </a>
+
+        {/* Theme Toggle & Mobile Menu Toggle */}
+        <div className="flex items-center space-x-4">
           <button className="cursor-pointer" onClick={toggleTheme}>
-            {theme === "dark" ? <IconSunFilled className="cursor-pointer" /> : <IconMoonFilled className="cursor-pointer" />}
+            {theme === "dark" ? <IconSunFilled /> : <IconMoonFilled />}
           </button>
+          <motion.button
+            className="lg:hidden text-xl z-50"
+            onClick={() => setMenuOpen(!menuOpen)}
+            animate={menuOpen ? "open" : "closed"}
+            variants={buttonVariants}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+          >
+            {menuOpen ? <IconX size={28} /> : <IconMenu2 size={28} />}
+          </motion.button>
         </div>
       </div>
+
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.nav
+            className="lg:hidden fixed top-16 left-0 right-0 w-full bg-background-light-base/95 dark:bg-background-dark-base/95 backdrop-blur-md border-t border-black/10 dark:border-white/10 shadow-md z-40"
+            initial="closed"
+            animate="open"
+            exit="closed"
+            variants={menuVariants}
+          >
+            <motion.ul
+              className="flex flex-col px-6 py-4 space-y-4"
+              variants={menuVariants}
+            >
+              {navigationItems.map((item, index) => (
+                <motion.li key={index} variants={itemVariants}>
+                  <Link
+                    to={item.link}
+                    className="dark:text-text-dark text-text-light hover:underline block py-2"
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    {item.title}
+                  </Link>
+                </motion.li>
+              ))}
+            </motion.ul>
+          </motion.nav>
+        )}
+      </AnimatePresence>
     </header>
   )
 }

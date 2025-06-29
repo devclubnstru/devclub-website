@@ -1,8 +1,21 @@
 import { techStackMap } from "../../data/techStack"
 import ProjectCard from "../../components/ProjectCard/ProjectCard"
 import { Link } from "react-router-dom"
+import { motion, useScroll, useTransform } from "framer-motion"
+import { useRef } from "react"
 
 const ProjectsSection = () => {
+    const ref = useRef(null)
+    const { scrollYProgress } = useScroll({
+        target: ref,
+        offset: ["start end", "end start"]
+    })
+
+    // Parallax transforms for text elements only
+    const workedOnTextY = useTransform(scrollYProgress, [0, 1], [0, -30])
+    const titleY = useTransform(scrollYProgress, [0, 1], [0, -60])
+    const subtitleY = useTransform(scrollYProgress, [0, 1], [0, -90])
+
     const dummyProjects = [
         {
             id: 1,
@@ -42,33 +55,96 @@ const ProjectsSection = () => {
         },
     ]
 
+    const headingVariants = {
+        hidden: { opacity: 0, y: 30 },
+        visible: { 
+            opacity: 1, 
+            y: 0,
+            transition: { duration: 0.6, ease: "easeOut" }
+        }
+    }
+
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.1,
+                delayChildren: 0.2
+            }
+        }
+    }
+
+    const cardVariants = {
+        hidden: { opacity: 0, y: 30 },
+        visible: { 
+            opacity: 1, 
+            y: 0,
+            transition: { duration: 0.5, ease: "easeOut" }
+        }
+    }
+
     return (
-        <section className="flex flex-col items-center justify-center space-y-4 mb-24 sm:p-2 px-4">
-            <div className="flex flex-col items-center justify-center space-y-2">
-                <h1 className="text-md w-fit font-black text-center bg-gradient-to-r dark:from-violet-500 dark:to-pink-300 from-violet-800 to-pink-500 bg-clip-text text-transparent">
+        <section ref={ref} className="flex flex-col items-center justify-center space-y-4 mb-24 sm:p-2 px-4">
+            <motion.div 
+                className="flex flex-col items-center justify-center space-y-2"
+                variants={headingVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+            >
+                <motion.h1 
+                    className="text-md w-fit font-black text-center bg-gradient-to-r dark:from-violet-500 dark:to-pink-300 from-violet-800 to-pink-500 bg-clip-text text-transparent"
+                    style={{ y: workedOnTextY }}
+                >
                     Projects we've worked on
-                </h1>
+                </motion.h1>
                 <div className="text-center">
-                    <h2 className="text-3xl mb-2 font-semibold">Innovate</h2>
-                    <p className="dark:text-text-muted-dark text-text-muted-light">
+                    <motion.h2 
+                        className="text-3xl mb-2 font-semibold"
+                        style={{ y: titleY }}
+                    >
+                        Innovate
+                    </motion.h2>
+                    <motion.p 
+                        className="dark:text-text-muted-dark text-text-muted-light"
+                        style={{ y: subtitleY }}
+                    >
                         We love building tools that make life easier and ideas come to life.
                         <br />
                         At DevClub, it's all about solving real problems through clean, thoughtful tech.
-                    </p>
+                    </motion.p>
                 </div>
-            </div>
+            </motion.div>
             <div className="py-8 mx-auto container">
-                <div className="flex items-center justify-between mb-8">
+                <motion.div 
+                    className="flex items-center justify-between mb-8"
+                    variants={headingVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.3 }}
+                >
                     <h1 className="text-xl font-bold">Featured Projects</h1>
                     <Link to="/projects">
                         <button className="flex text-sm items-center justify-center w-fit font-black text-center bg-gradient-to-r dark:text-violet-500 text-violet-800 cursor-pointer">All Projects &rarr;</button>
                     </Link>
-                </div>
-                <div className="grid grid-cols-2 lg:grid-cols-4 sm:gap-8 gap-2 overflow-x-auto py-4">
+                </motion.div>
+                <motion.div 
+                    className="grid grid-cols-2 lg:grid-cols-4 sm:gap-8 gap-2 overflow-x-auto py-6 px-2"
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.2 }}
+                >
                     {dummyProjects.slice(0, 4).map((project) => (
-                        <ProjectCard key={project.id} {...project} />
+                        <motion.div
+                            key={project.id}
+                            variants={cardVariants}
+                        >
+                            <ProjectCard {...project} />
+                        </motion.div>
                     ))}
-                </div>
+                </motion.div>
             </div>
         </section>
     )
