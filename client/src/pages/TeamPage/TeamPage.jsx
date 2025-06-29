@@ -24,7 +24,7 @@ const TeamPage = () => {
       id: 2,
       name: "Ved Pawar",
       role: "Vice President",
-      avatar: "",
+      avatar: "/images/team/class_of_28/ved_team_image.jpeg",
       bio: "Passionate about creating inclusive tech spaces and mentoring newcomers. Contributing to open-source for 2+ years.",
       skills: ["React", "Node.js", "Express.js", "MongoDB", "Next.js", "Mentorship", "Kubernetes", "Docker", "Git", "Github"],
       social: {
